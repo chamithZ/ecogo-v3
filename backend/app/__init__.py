@@ -24,9 +24,13 @@ def create_app():
 
     # Register Blueprints
     from app.routes.vehicleRoute import vehicle_bp
-    from app.routes.userRoutes import user_bp  # Add user routes
+    from app.routes.userRoutes import user_bp 
+    from app.routes.co2ModelRoutes import co2_bp
+    from app.routes.recommendationRoutes import  recommend_bp
 
     app.register_blueprint(vehicle_bp, url_prefix="/api/vehicles")
     app.register_blueprint(user_bp, url_prefix="/api/users")  
+    app.register_blueprint(co2_bp, url_prefix="/api/co2")
+    app.register_blueprint(recommend_bp, url_prefix="/api/recommend")
 
     return app
